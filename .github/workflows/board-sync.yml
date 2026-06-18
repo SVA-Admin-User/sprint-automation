@@ -1,0 +1,30 @@
+name: Board Sync Automation
+
+on:
+  # Polls the org Project and moves items based on linked PR/issue state.
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  board-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Sync board statuses
+        env:
+          GH_AUTOMATION_TOKEN: ${{ secrets.GH_AUTOMATION_TOKEN }}
+        run: python scripts/board_sync.py
