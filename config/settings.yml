@@ -1,0 +1,32 @@
+# Edit this file before running the workflows.
+org: svatechsystems
+project_number: 1          # TODO: change this to the number in https://github.com/orgs/svatechsystems/projects/<number>
+project_owner_type: organization
+team_slug: your-team-slug   # TODO: change this to the GitHub team slug
+
+project_fields:
+  status: Status
+  sprint_candidates: [Sprint, Iteration]
+
+statuses:
+  todo: Backlog
+  in_progress: In Progress
+  done: Done
+  carryover: Backlog
+
+assignment:
+  strategy: least_loaded
+  max_open_issues_per_user: 5
+  skip_unavailable_users: true
+
+# Optional manual user overrides. Login names must match GitHub usernames exactly.
+users:
+  Sushmitha-CDE:
+    unavailable: false
+    skills: [data, validation]
+  Sai-Prashanth-CDE:
+    unavailable: false
+    skills: [data, ingest]
+  Keval-Hiteshbhai-CDE:
+    unavailable: false
+    skills: [ml, python]

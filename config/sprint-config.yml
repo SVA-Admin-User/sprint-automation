@@ -1,0 +1,30 @@
+sprint:
+  name: Sprint-2026-07
+  start_date: 2026-07-01
+  end_date: 2026-07-14
+  next_sprint_name: Sprint-2026-08
+
+# Each story creates one GitHub issue and adds it to the org Kanban Board.
+# repo must be a repository under svatechsystems where issues are enabled.
+stories:
+  - title: Data sync issue
+    repo: your-repo-name
+    labels: [sprint, data]
+    points: 3
+    skills: [data]
+    body: |
+      Acceptance Criteria:
+      - Define expected sync behavior.
+      - Add validation/logging.
+      - Confirm issue is resolved.
+
+  - title: Data validation
+    repo: your-repo-name
+    labels: [sprint, validation]
+    points: 2
+    skills: [validation]
+    body: |
+      Acceptance Criteria:
+      - Add validation checks.
+      - Document failure scenarios.
+      - Confirm output is correct.
